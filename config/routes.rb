@@ -4,11 +4,10 @@ Rails.application.routes.draw do
     sessions: "public/sessions"
   }
 
-  devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
+  devise_for :admin, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
   }
 
-  devise_scope :customer do
-    root to: "public/registrations#new"
-  end
+  root to: "public/items#top"
+  resources :items
 end
