@@ -8,7 +8,12 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
 
-  root to: "public/items#top"
-  resources :items
-  resources :genres
+  scope module: :public do
+    root "items#top"
+  end
+  
+  namespace :admin do
+    resources :items
+    resources :genres
+  end
 end
