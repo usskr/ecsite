@@ -10,4 +10,5 @@ Rails.application.routes.draw do
 
   root to: "public/items#top"
   resources :items
+  resources :genres
 end
